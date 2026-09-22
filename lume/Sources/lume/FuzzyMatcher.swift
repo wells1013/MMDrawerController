@@ -67,3 +67,4 @@ final class FuzzyMatcher {
         return qi == qChars.count
     }
 }
+

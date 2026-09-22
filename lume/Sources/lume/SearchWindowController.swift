@@ -307,3 +307,4 @@ final class SearchWindowController: NSWindowController, NSTextFieldDelegate, NST
         return true
     }
 }
+

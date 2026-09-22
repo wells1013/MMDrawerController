@@ -10,13 +10,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let appStore = AppStore()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // 1. 构建应用索引（后台）
         appStore.indexApplications()
-
-        // 2. 创建搜索窗口（默认隐藏）
         searchWindowController = SearchWindowController(appStore: appStore)
-
-        // 3. 注册全局快捷键 ⌥ + Space（Alt/Option + Space）
         hotKeyManager = HotKeyManager()
         hotKeyManager.register(
             keyCode: UInt32(kVK_Space),
@@ -25,20 +20,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 self?.toggleSearchWindow()
             }
         )
-
-        // 4. 无需额外设置，窗口已通过 canJoinAllSpaces + orderFrontRegardless 正常响应
     }
 
     func toggleSearchWindow() {
         guard let wc = searchWindowController else { return }
-        if wc.isVisible {
-            wc.hideWindow()
-        } else {
-            wc.showWindow()
-        }
+        if wc.isVisible { wc.hideWindow() } else { wc.showWindow() }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
         hotKeyManager.unregister()
     }
 }
+
