@@ -26,8 +26,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             }
         )
 
-        // 4. 监听系统事件（让窗口能拿到键盘焦点）
-        NSApp.disableRelaunching()
+        // 4. 无需额外设置，窗口已通过 canJoinAllSpaces + orderFrontRegardless 正常响应
     }
 
     func toggleSearchWindow() {
