@@ -1,0 +1,14 @@
+# Xcode / SwiftPM 构建产物
+.build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+
+# macOS 垃圾
+.DS_Store
+._*
+
+# Xcode 项目（用户可能用 Xcode 打开）
+*.xcodeproj
+*.xcworkspace

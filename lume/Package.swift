@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "QuickLauncher",
+    name: "lume",
     platforms: [
         .macOS(.v12)
     ],
     targets: [
         .executableTarget(
-            name: "QuickLauncher",
-            path: "Sources/QuickLauncher"
+            name: "lume",
+            path: "Sources/lume"
         )
     ]
 )

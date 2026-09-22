@@ -26,8 +26,8 @@ final class SearchWindowController: NSWindowController, NSTextFieldDelegate, NST
     init(appStore: AppStore) {
         self.appStore = appStore
 
-        // 创建无边框悬浮窗口
-        let panel = NSPanel(
+        // 创建无边框悬浮窗口（保留 .nonactivatingPanel 但后续主动激活 app）
+        let panel = LumePanel(
             contentRect: NSRect(x: 0, y: 0, width: windowWidth, height: baseHeight),
             styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered,
